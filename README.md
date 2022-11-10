@@ -6,3 +6,5 @@
 * [Abstract factory](src/main/java/org/designpatterns/abstract_factory)
 
 * [Builder](src/main/java/org/designpatterns/builder)
+
+* [Factory method](src/main/java/org/designpatterns/factory_method)

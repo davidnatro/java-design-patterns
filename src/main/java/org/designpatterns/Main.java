@@ -7,6 +7,9 @@ import org.designpatterns.builder.CustomEmployeeBuilder;
 import org.designpatterns.builder.EmployeeBuilder;
 import org.designpatterns.builder.EmployeeDirector;
 import org.designpatterns.builder.Position;
+import org.designpatterns.factory_method.Factory;
+import org.designpatterns.factory_method.Plane;
+import org.designpatterns.factory_method.Truck;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,6 +29,7 @@ public class Main {
 
         // Builder
         System.out.println("== Builder ==");
+
         EmployeeBuilder buildSettings = new CustomEmployeeBuilder();
         buildSettings
                 .setId(1)
@@ -37,6 +41,23 @@ public class Main {
 
         System.out.println(director.getEmployee());
 
-        System.out.println("==========");
+        System.out.println("==========\n");
+
+        // Factory method
+        System.out.println("== Factory method ==");
+
+        Factory factory = new Factory();
+
+        try {
+            System.out.println(factory.order("truck"));
+            System.out.println(factory.order("plane"));
+            System.out.println(factory.order("car"));
+            System.out.println(factory.order(null));
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        System.out.println("==========\n");
+
     }
 }
