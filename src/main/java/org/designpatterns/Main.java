@@ -49,10 +49,10 @@ public class Main {
         Factory factory = new Factory();
 
         try {
-            System.out.println(factory.order("truck"));
-            System.out.println(factory.order("plane"));
-            System.out.println(factory.order("car"));
-            System.out.println(factory.order(null));
+            System.out.println(factory.order("truck").deliver());
+            System.out.println(factory.order("plane").deliver());
+            System.out.println(factory.order("car").deliver());
+            System.out.println(factory.order(null).deliver());
         } catch (IllegalArgumentException exception) {
             System.out.println(exception.getMessage());
         }
