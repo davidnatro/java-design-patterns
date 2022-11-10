@@ -10,7 +10,7 @@ public class EmployeeDirector {
     }
 
     public void build() {
-        employee = employeeBuilder.build();
+        employee = employeeBuilder.buildEmployee();
     }
 
     public Employee getEmployee() {

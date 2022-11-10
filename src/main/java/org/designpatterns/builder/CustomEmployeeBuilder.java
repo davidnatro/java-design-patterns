@@ -33,7 +33,7 @@ public class CustomEmployeeBuilder implements EmployeeBuilder {
     }
 
     @Override
-    public Employee build() {
+    public Employee buildEmployee() {
         if (id == 0 || fullName == null || position == null) {
             return null;
         }

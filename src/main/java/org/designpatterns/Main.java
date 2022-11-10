@@ -11,6 +11,8 @@ import org.designpatterns.builder.Position;
 public class Main {
     public static void main(String[] args) {
         // Abstract factory
+        System.out.println("== Abstract factory ==");
+
         TechFactory appleFactory = new AppleFactory();
         TechFactory samsungFactory = new SamsungFactory();
 
@@ -20,7 +22,10 @@ public class Main {
         System.out.println(samsungFactory.producePhone());
         System.out.println(samsungFactory.produceComputer());
 
+        System.out.println("==========\n");
+
         // Builder
+        System.out.println("== Builder ==");
         EmployeeBuilder buildSettings = new CustomEmployeeBuilder();
         buildSettings
                 .setId(1)
@@ -31,5 +36,7 @@ public class Main {
         director.build();
 
         System.out.println(director.getEmployee());
+
+        System.out.println("==========");
     }
 }

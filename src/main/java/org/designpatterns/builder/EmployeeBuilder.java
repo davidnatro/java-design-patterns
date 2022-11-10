@@ -9,5 +9,5 @@ public interface EmployeeBuilder {
 
     EmployeeBuilder setPersonalData(String personalData);
 
-    Employee build();
+    Employee buildEmployee();
 }
