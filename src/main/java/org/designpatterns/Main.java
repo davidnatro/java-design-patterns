@@ -3,6 +3,10 @@ package org.designpatterns;
 import org.designpatterns.abstract_factory.AppleFactory;
 import org.designpatterns.abstract_factory.SamsungFactory;
 import org.designpatterns.abstract_factory.TechFactory;
+import org.designpatterns.builder.CustomEmployeeBuilder;
+import org.designpatterns.builder.EmployeeBuilder;
+import org.designpatterns.builder.EmployeeDirector;
+import org.designpatterns.builder.Position;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,5 +19,17 @@ public class Main {
 
         System.out.println(samsungFactory.producePhone());
         System.out.println(samsungFactory.produceComputer());
+
+        // Builder
+        EmployeeBuilder buildSettings = new CustomEmployeeBuilder();
+        buildSettings
+                .setId(1)
+                .setFullName("FirstName LastName")
+                .setPosition(Position.Programmer);
+
+        EmployeeDirector director = new EmployeeDirector(buildSettings);
+        director.build();
+
+        System.out.println(director.getEmployee());
     }
 }
