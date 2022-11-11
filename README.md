@@ -8,3 +8,5 @@
 * [Builder](src/main/java/org/designpatterns/builder)
 
 * [Factory method](src/main/java/org/designpatterns/factory_method)
+
+* [Lazy initialization](src/main/java/org/designpatterns/lazy_initialization)
