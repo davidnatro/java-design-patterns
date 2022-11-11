@@ -10,6 +10,7 @@ import org.designpatterns.builder.Position;
 import org.designpatterns.factory_method.Factory;
 import org.designpatterns.factory_method.Plane;
 import org.designpatterns.factory_method.Truck;
+import org.designpatterns.lazy_initialization.LazyObject;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,5 +60,16 @@ public class Main {
 
         System.out.println("==========\n");
 
+
+        // Lazy initialization
+        System.out.println("== Lazy initialization ==");
+
+        LazyObject lazyObject = new LazyObject();
+        System.out.print("Lazy: ");
+        lazyObject.lazy();
+        System.out.print("Not lazy: ");
+        lazyObject.notLazy();
+
+        System.out.println("==========\n");
     }
 }
