@@ -10,3 +10,5 @@
 * [Factory method](src/main/java/org/designpatterns/factory_method)
 
 * [Lazy initialization](src/main/java/org/designpatterns/lazy_initialization)
+
+* [Object pool](src/main/java/org/designpatterns/object_pool)
