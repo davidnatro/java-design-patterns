@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Queue;
 
 public class ObjectPool {
-    // private List<PooledObject> objects;
     private final Queue<PooledObject> objects;
     private final List<PooledObject> inUseObjects;
 
@@ -34,11 +33,11 @@ public class ObjectPool {
     }
 
     public synchronized void returnObject(final PooledObject object) {
+        if (object == null) {
+            return;
+        }
+
         inUseObjects.remove(object);
         objects.add(object);
-    }
-
-    public synchronized boolean isEmpty() {
-        return objects.isEmpty();
     }
 }

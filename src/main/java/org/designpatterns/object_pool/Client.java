@@ -9,35 +9,47 @@ public class Client implements Runnable {
 
     public Client(final ObjectPool pool) {
         this.id = ++number;
-
         this.pool = pool;
     }
 
-    private synchronized PooledObject getObjectFromPool() {
-        while (pool.isEmpty()) {
-            try {
-                wait();
-            } catch (InterruptedException exception) {
-                System.out.println(exception.getMessage());
+    private PooledObject getObjectFromPool() {
+        synchronized (pool) {
+            PooledObject object;
+
+            while ((object = pool.getObject()) == null) {
+                try {
+                    pool.wait();
+                } catch (final InterruptedException exception) {
+                    System.out.println(exception.getMessage());
+                }
             }
+
+            System.out.println(this + " gets " + object);
+
+            return object;
         }
 
-        PooledObject object = pool.getObject();
-
-        System.out.println(this + " gets " + object);
-
-        return object;
     }
 
-    private synchronized void returnObjectToPool(final PooledObject object) {
-        pool.returnObject(object);
-        System.out.println(this + " returns " + object);
-        notifyAll();
+    private void returnObjectToPool(final PooledObject object) {
+        synchronized (pool) {
+            pool.returnObject(object);
+            System.out.println(this + " returns " + object);
+            pool.notifyAll();
+        }
     }
 
     @Override
     public void run() {
-        returnObjectToPool(getObjectFromPool());
+        PooledObject object = getObjectFromPool();
+
+        try {
+            Thread.sleep(0);
+        } catch (final InterruptedException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        returnObjectToPool(object);
     }
 
     @Override

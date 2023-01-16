@@ -62,6 +62,24 @@ public class Main {
         lazyObject.notLazy();
     }
 
+    private static void objectPool() {
+        ObjectPool pool = new ObjectPool(2);
+
+        ExecutorService es = Executors.newCachedThreadPool();
+        for (int i = 0; i < 5; i++) {
+            es.execute(new Thread(new Client(pool)));
+        }
+        es.shutdown();
+        try {
+            if (es.awaitTermination(1, TimeUnit.MINUTES)) {
+                System.out.println("Object pool pattern implemented!");
+            }
+        } catch (InterruptedException exception) {
+            System.out.println(exception.getMessage());
+            return;
+        }
+    }
+
     public static void main(String[] args) {
         // Abstract factory
         System.out.println("== Abstract factory ==");
@@ -95,21 +113,7 @@ public class Main {
         // Object pool
         System.out.println("== Object pool ==");
 
-        ObjectPool pool = new ObjectPool(2);
-
-        ExecutorService es = Executors.newCachedThreadPool();
-        for (int i = 0; i < 5; i++) {
-            es.execute(new Thread(new Client(pool)));
-        }
-        es.shutdown();
-        try {
-            if (es.awaitTermination(1, TimeUnit.MINUTES)) {
-                System.out.println("Object pool pattern implemented!");
-            }
-        } catch (InterruptedException exception) {
-            System.out.println(exception.getMessage());
-            return;
-        }
+        objectPool();
 
         System.out.println("==========\n");
     }
