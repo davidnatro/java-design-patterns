@@ -4,7 +4,7 @@
 
 * [Main](src/main/java/org/designpatterns/Main.java)
 
-<details open>
+<details>
 <summary>Creational Design Patterns</summary>
 
 * [Abstract factory](src/main/java/org/designpatterns/creational/abstract_factory)
@@ -23,10 +23,10 @@
 
 </details>
 
-<details open>
+<details>
 <summary>Behavioral Design Patterns</summary>
 </details>
 
-<details open>
+<details>
 <summary>Structural Design Patterns</summary>
 </details>
