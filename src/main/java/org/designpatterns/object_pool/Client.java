@@ -28,7 +28,6 @@ public class Client implements Runnable {
 
             return object;
         }
-
     }
 
     private void returnObjectToPool(final PooledObject object) {

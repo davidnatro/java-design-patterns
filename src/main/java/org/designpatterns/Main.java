@@ -11,6 +11,8 @@ import org.designpatterns.factory_method.Factory;
 import org.designpatterns.lazy_initialization.LazyObject;
 import org.designpatterns.object_pool.Client;
 import org.designpatterns.object_pool.ObjectPool;
+import org.designpatterns.prototype.IPrototype;
+import org.designpatterns.prototype.Prototype;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -114,6 +116,18 @@ public class Main {
         System.out.println("== Object pool ==");
 
         objectPool();
+
+        System.out.println("==========\n");
+
+        // Prototype
+        System.out.println("== Prototype ==");
+
+        IPrototype<Prototype> main = new Prototype();
+        System.out.println(main);
+        var copy = main.getPrototype();
+        copy.setId(5);
+        System.out.println(copy);
+        System.out.println(copy.getPrototype());
 
         System.out.println("==========\n");
     }
