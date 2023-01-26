@@ -1,18 +1,18 @@
 package org.designpatterns;
 
-import org.designpatterns.abstract_factory.AppleFactory;
-import org.designpatterns.abstract_factory.SamsungFactory;
-import org.designpatterns.abstract_factory.TechFactory;
-import org.designpatterns.builder.CustomEmployeeBuilder;
-import org.designpatterns.builder.EmployeeBuilder;
-import org.designpatterns.builder.EmployeeDirector;
-import org.designpatterns.builder.Position;
-import org.designpatterns.factory_method.Factory;
-import org.designpatterns.lazy_initialization.LazyObject;
-import org.designpatterns.object_pool.Client;
-import org.designpatterns.object_pool.ObjectPool;
-import org.designpatterns.prototype.IPrototype;
-import org.designpatterns.prototype.Prototype;
+import org.designpatterns.creational.abstract_factory.AppleFactory;
+import org.designpatterns.creational.abstract_factory.SamsungFactory;
+import org.designpatterns.creational.abstract_factory.TechFactory;
+import org.designpatterns.creational.builder.CustomEmployeeBuilder;
+import org.designpatterns.creational.builder.EmployeeBuilder;
+import org.designpatterns.creational.builder.EmployeeDirector;
+import org.designpatterns.creational.builder.Position;
+import org.designpatterns.creational.factory_method.Factory;
+import org.designpatterns.creational.lazy_initialization.LazyObject;
+import org.designpatterns.creational.object_pool.Client;
+import org.designpatterns.creational.object_pool.ObjectPool;
+import org.designpatterns.creational.prototype.IPrototype;
+import org.designpatterns.creational.prototype.Prototype;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package org.designpatterns.object_pool;
+package org.designpatterns.creational.object_pool;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package org.designpatterns.singleton;
+package org.designpatterns.creational.singleton;
 
 public class ObjectSingleton {
     private static volatile Object data = null;

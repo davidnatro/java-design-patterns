@@ -1,4 +1,4 @@
-package org.designpatterns.factory_method;
+package org.designpatterns.creational.factory_method;
 
 public abstract class Transport {
     public String deliver() {

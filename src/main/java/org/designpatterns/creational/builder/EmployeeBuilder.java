@@ -1,4 +1,4 @@
-package org.designpatterns.builder;
+package org.designpatterns.creational.builder;
 
 public interface EmployeeBuilder {
     EmployeeBuilder setId(int id);

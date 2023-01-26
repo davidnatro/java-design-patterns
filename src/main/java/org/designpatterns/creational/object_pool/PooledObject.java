@@ -1,4 +1,4 @@
-package org.designpatterns.object_pool;
+package org.designpatterns.creational.object_pool;
 
 public class PooledObject {
     private final int id;

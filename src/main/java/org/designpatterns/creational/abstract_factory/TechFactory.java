@@ -1,4 +1,4 @@
-package org.designpatterns.abstract_factory;
+package org.designpatterns.creational.abstract_factory;
 
 public interface TechFactory {
     Computer produceComputer();

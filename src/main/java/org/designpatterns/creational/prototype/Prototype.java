@@ -1,4 +1,4 @@
-package org.designpatterns.prototype;
+package org.designpatterns.creational.prototype;
 
 public class Prototype implements IPrototype<Prototype> {
     private long id;

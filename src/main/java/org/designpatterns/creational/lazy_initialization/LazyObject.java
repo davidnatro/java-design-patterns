@@ -1,4 +1,4 @@
-package org.designpatterns.lazy_initialization;
+package org.designpatterns.creational.lazy_initialization;
 
 import java.util.ArrayList;
 import java.util.List;

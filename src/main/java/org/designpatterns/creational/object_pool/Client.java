@@ -1,4 +1,4 @@
-package org.designpatterns.object_pool;
+package org.designpatterns.creational.object_pool;
 
 public class Client implements Runnable {
     private final ObjectPool pool;
