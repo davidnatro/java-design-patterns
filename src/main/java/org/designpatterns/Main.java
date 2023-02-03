@@ -13,9 +13,8 @@ import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
 import org.designpatterns.creational.prototype.IPrototype;
 import org.designpatterns.creational.prototype.Prototype;
-import org.designpatterns.structural.adapter.Animal;
-import org.designpatterns.structural.adapter.Car;
-import org.designpatterns.structural.adapter.PrintMovableAdapter;
+import org.designpatterns.structural.adapter.PrintProductAdapter;
+import org.designpatterns.structural.adapter.Product;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -94,6 +93,15 @@ public class Main {
         System.out.println(copy.getPrototype());
     }
 
+    private static void adapter() {
+        PrintProductAdapter adapter = new PrintProductAdapter(new Product("Product #1", 55.5));
+        adapter.print();
+    }
+
+    private static void bridge() {
+
+    }
+
     public static void main(String[] args) {
         // Abstract factory
         System.out.println("== Abstract factory ==");
@@ -138,12 +146,17 @@ public class Main {
 
         System.out.println("==========\n");
 
+        // Adapter
         System.out.println("== Adapter ==");
 
-        PrintMovableAdapter adapter = new PrintMovableAdapter(new Car());
-        adapter.print();
-        adapter = new PrintMovableAdapter(new Animal());
-        adapter.print();
+        adapter();
+
+        System.out.println("==========\n");
+
+        // Bridge
+        System.out.println("== Bridge ==");
+
+        bridge();
 
         System.out.println("==========\n");
     }
