@@ -34,4 +34,6 @@
 
 * [Bridge](src/main/java/org/designpatterns/structural/bridge)
 
+* [Facade](src/main/java/org/designpatterns/structural/facade)
+
 </details>

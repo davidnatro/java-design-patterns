@@ -19,6 +19,8 @@ import org.designpatterns.structural.bridge.BridgeForOS;
 import org.designpatterns.structural.bridge.MacOS;
 import org.designpatterns.structural.bridge.OperationalSystem;
 import org.designpatterns.structural.bridge.Windows;
+import org.designpatterns.structural.facade.FacadeWriter;
+import org.designpatterns.structural.facade.Writer;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -112,6 +114,11 @@ public class Main {
         bridge.run();
     }
 
+    private static void facade() {
+        Writer writer = new FacadeWriter("path");
+        writer.write();
+    }
+
     public static void main(String[] args) {
         // Abstract factory
         System.out.println("== Abstract factory ==");
@@ -167,6 +174,13 @@ public class Main {
         System.out.println("== Bridge ==");
 
         bridge();
+
+        System.out.println("==========\n");
+
+        // Facade
+        System.out.println("== Bridge ==");
+
+        facade();
 
         System.out.println("==========\n");
     }
