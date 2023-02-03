@@ -13,8 +13,7 @@ import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
 import org.designpatterns.creational.prototype.IPrototype;
 import org.designpatterns.creational.prototype.Prototype;
-import org.designpatterns.structural.adapter.PrintProductAdapter;
-import org.designpatterns.structural.adapter.Product;
+import org.designpatterns.structural.adapter.Adapter;
 import org.designpatterns.structural.bridge.BridgeForOS;
 import org.designpatterns.structural.bridge.MacOS;
 import org.designpatterns.structural.bridge.OperationalSystem;
@@ -99,11 +98,6 @@ public class Main {
         System.out.println(copy.getPrototype());
     }
 
-    private static void adapter() {
-        PrintProductAdapter adapter = new PrintProductAdapter(new Product("Product #1", 55.5));
-        adapter.print();
-    }
-
     private static void bridge() {
         OperationalSystem system = new MacOS();
         BridgeForOS bridge = new BridgeForOS(system);
@@ -117,6 +111,10 @@ public class Main {
     private static void facade() {
         Writer writer = new FacadeWriter("path");
         writer.write();
+    }
+
+    private static void decorator() {
+
     }
 
     public static void main(String[] args) {
@@ -163,13 +161,6 @@ public class Main {
 
         System.out.println("==========\n");
 
-        // Adapter
-        System.out.println("== Adapter ==");
-
-        adapter();
-
-        System.out.println("==========\n");
-
         // Bridge
         System.out.println("== Bridge ==");
 
@@ -181,6 +172,13 @@ public class Main {
         System.out.println("== Bridge ==");
 
         facade();
+
+        System.out.println("==========\n");
+
+        // Decorator
+        System.out.println("== Bridge ==");
+
+        decorator();
 
         System.out.println("==========\n");
     }
