@@ -30,6 +30,8 @@
 <details>
 <summary>Structural Design Patterns</summary>
 
-* [Adapter](src/main/java/org/designpatterns/structural)
+* [Adapter](src/main/java/org/designpatterns/structural/adapter)
+
+* [Bridge](src/main/java/org/designpatterns/structural/bridge)
 
 </details>
