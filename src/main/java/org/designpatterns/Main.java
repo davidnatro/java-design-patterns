@@ -15,6 +15,10 @@ import org.designpatterns.creational.prototype.IPrototype;
 import org.designpatterns.creational.prototype.Prototype;
 import org.designpatterns.structural.adapter.PrintProductAdapter;
 import org.designpatterns.structural.adapter.Product;
+import org.designpatterns.structural.bridge.BridgeForOS;
+import org.designpatterns.structural.bridge.MacOS;
+import org.designpatterns.structural.bridge.OperationalSystem;
+import org.designpatterns.structural.bridge.Windows;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -99,7 +103,13 @@ public class Main {
     }
 
     private static void bridge() {
+        OperationalSystem system = new MacOS();
+        BridgeForOS bridge = new BridgeForOS(system);
+        bridge.run();
 
+        system = new Windows();
+        bridge = new BridgeForOS(system);
+        bridge.run();
     }
 
     public static void main(String[] args) {
