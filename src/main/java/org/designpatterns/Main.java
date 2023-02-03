@@ -13,6 +13,9 @@ import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
 import org.designpatterns.creational.prototype.IPrototype;
 import org.designpatterns.creational.prototype.Prototype;
+import org.designpatterns.structural.adapter.Animal;
+import org.designpatterns.structural.adapter.Car;
+import org.designpatterns.structural.adapter.PrintMovableAdapter;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -82,6 +85,15 @@ public class Main {
         }
     }
 
+    private static void prototype() {
+        IPrototype<Prototype> main = new Prototype();
+        System.out.println(main);
+        var copy = main.getPrototype();
+        copy.setId(5);
+        System.out.println(copy);
+        System.out.println(copy.getPrototype());
+    }
+
     public static void main(String[] args) {
         // Abstract factory
         System.out.println("== Abstract factory ==");
@@ -122,12 +134,16 @@ public class Main {
         // Prototype
         System.out.println("== Prototype ==");
 
-        IPrototype<Prototype> main = new Prototype();
-        System.out.println(main);
-        var copy = main.getPrototype();
-        copy.setId(5);
-        System.out.println(copy);
-        System.out.println(copy.getPrototype());
+        prototype();
+
+        System.out.println("==========\n");
+
+        System.out.println("== Adapter ==");
+
+        PrintMovableAdapter adapter = new PrintMovableAdapter(new Car());
+        adapter.print();
+        adapter = new PrintMovableAdapter(new Animal());
+        adapter.print();
 
         System.out.println("==========\n");
     }

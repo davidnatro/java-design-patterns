@@ -29,4 +29,5 @@
 
 <details>
 <summary>Structural Design Patterns</summary>
+* [Adapter](src)
 </details>
