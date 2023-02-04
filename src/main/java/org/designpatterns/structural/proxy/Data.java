@@ -3,15 +3,7 @@ package org.designpatterns.structural.proxy;
 public class Data {
     private static long idCount = 0;
 
-    private final long id;
-
-    public Data() {
-        if (idCount >= 1) {
-            idCount -= 1;
-        }
-
-        id = ++idCount;
-    }
+    private final long id = ++idCount;
 
     public long getId() {
         return id;
