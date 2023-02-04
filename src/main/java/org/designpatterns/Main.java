@@ -13,11 +13,14 @@ import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
 import org.designpatterns.creational.prototype.IPrototype;
 import org.designpatterns.creational.prototype.Prototype;
-import org.designpatterns.structural.adapter.Adapter;
 import org.designpatterns.structural.bridge.BridgeForOS;
 import org.designpatterns.structural.bridge.MacOS;
 import org.designpatterns.structural.bridge.OperationalSystem;
 import org.designpatterns.structural.bridge.Windows;
+import org.designpatterns.structural.decorator.EmailNotifier;
+import org.designpatterns.structural.decorator.Notification;
+import org.designpatterns.structural.decorator.Notifier;
+import org.designpatterns.structural.decorator.SmsNotifier;
 import org.designpatterns.structural.facade.FacadeWriter;
 import org.designpatterns.structural.facade.Writer;
 
@@ -114,7 +117,18 @@ public class Main {
     }
 
     private static void decorator() {
+        Notification mainNotifier = new Notifier();
+        Notification smsNotifier = new SmsNotifier(new Notifier());
+        Notification emailNotifier = new EmailNotifier(new Notifier());
 
+        System.out.println("Main obj: ");
+        mainNotifier.notifySubscriber();
+
+        System.out.println("SmsDecorator obj: ");
+        smsNotifier.notifySubscriber();
+
+        System.out.println("EmailDecorator obj: ");
+        emailNotifier.notifySubscriber();
     }
 
     public static void main(String[] args) {
@@ -176,7 +190,7 @@ public class Main {
         System.out.println("==========\n");
 
         // Decorator
-        System.out.println("== Bridge ==");
+        System.out.println("== Decorator ==");
 
         decorator();
 
