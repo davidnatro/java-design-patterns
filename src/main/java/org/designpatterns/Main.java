@@ -23,6 +23,9 @@ import org.designpatterns.structural.decorator.Notifier;
 import org.designpatterns.structural.decorator.SmsNotifier;
 import org.designpatterns.structural.facade.FacadeWriter;
 import org.designpatterns.structural.facade.Writer;
+import org.designpatterns.structural.proxy.ThirdPartyClass;
+import org.designpatterns.structural.proxy.ThirdPartyClassProxy;
+import org.designpatterns.structural.proxy.ThirdPartyLib;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -131,6 +134,13 @@ public class Main {
         emailNotifier.notifySubscriber();
     }
 
+    private static void proxy() {
+        final ThirdPartyLib lib = new ThirdPartyClassProxy();
+        for (int i = 0; i < 3; i++) {
+            System.out.println(lib.getData());
+        }
+    }
+
     public static void main(String[] args) {
         // Abstract factory
         System.out.println("== Abstract factory ==");
@@ -193,6 +203,13 @@ public class Main {
         System.out.println("== Decorator ==");
 
         decorator();
+
+        System.out.println("==========\n");
+
+        // Proxy
+        System.out.println("== Decorator ==");
+
+        proxy();
 
         System.out.println("==========\n");
     }

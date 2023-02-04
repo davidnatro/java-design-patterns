@@ -36,4 +36,8 @@
 
 * [Facade](src/main/java/org/designpatterns/structural/facade)
 
+* [Decorator](src/main/java/org/designpatterns/structural/decorator)
+
+* [Proxy](src/main/java/org/designpatterns/structural/proxy)
+
 </details>
