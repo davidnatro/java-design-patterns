@@ -44,15 +44,19 @@
 
 </details>
 
+##
+
 <details>
 <summary>JUnit tests</summary>
 
 <details>
 <summary>Creational Design Patterns</summary>
 
-* [Singleton tests](src/test/java/org/designpatterns/creational/singleton)
+* [Abstract factory tests](src/test/java/org/designpatterns/creational/abstract_factory)
 
 * [Factory method tests](src/test/java/org/designpatterns/creational/factory_method)
+
+* [Singleton tests](src/test/java/org/designpatterns/creational/singleton)
 
 </details>
 

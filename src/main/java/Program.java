@@ -30,17 +30,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class Program {
-    private static void abstractFactory() {
-        TechFactory appleFactory = new AppleFactory();
-        TechFactory samsungFactory = new SamsungFactory();
-
-        System.out.println(appleFactory.producePhone());
-        System.out.println(appleFactory.produceComputer());
-
-        System.out.println(samsungFactory.producePhone());
-        System.out.println(samsungFactory.produceComputer());
-    }
-
     private static void builder() {
         EmployeeBuilder buildSettings = new CustomEmployeeBuilder();
         buildSettings.setId(1).setFullName("FirstName LastName").setPosition(Position.Programmer);
@@ -49,19 +38,6 @@ public class Program {
         director.build();
 
         System.out.println(director.getEmployee());
-    }
-
-    private static void factoryMethod() {
-        Factory factory = new Factory();
-
-        try {
-            System.out.println(factory.order("truck").deliver());
-            System.out.println(factory.order("plane").deliver());
-            System.out.println(factory.order("car").deliver());
-            System.out.println(factory.order(null).deliver());
-        } catch (IllegalArgumentException exception) {
-            System.out.println(exception.getMessage());
-        }
     }
 
     private static void lazyInitialization() {
@@ -153,27 +129,12 @@ public class Program {
     }
 
     public static void main(String[] args) {
-        // Abstract factory
-        System.out.println("== Abstract factory ==");
-
-        abstractFactory();
-
-        System.out.println("==========\n");
-
         // Builder
         System.out.println("== Builder ==");
 
         builder();
 
         System.out.println("==========\n");
-
-        // Factory method
-        System.out.println("== Factory method ==");
-
-        factoryMethod();
-
-        System.out.println("==========\n");
-
 
         // Lazy initialization
         System.out.println("== Lazy initialization ==");
