@@ -43,3 +43,25 @@
 * [Flyweight](src/main/java/org/designpatterns/structural/flyweight)
 
 </details>
+
+<details>
+<summary>JUnit tests</summary>
+
+<details>
+<summary>Creational Design Patterns</summary>
+
+* [Singleton tests](src/test/java/org/designpatterns/creational/singleton)
+
+* [Factory method tests](src/test/java/org/designpatterns/creational/factory_method)
+
+</details>
+
+<details>
+<summary>Structural Design Patterns</summary>
+</details>
+
+<details>
+<summary>Behavioral Design Patterns</summary>
+</details>
+
+</details>
