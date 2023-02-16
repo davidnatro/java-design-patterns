@@ -23,16 +23,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class Program {
-    private static void builder() {
-        EmployeeBuilder buildSettings = new CustomEmployeeBuilder();
-        buildSettings.setId(1).setFullName("FirstName LastName").setPosition(Position.Programmer);
-
-        EmployeeDirector director = new EmployeeDirector(buildSettings);
-        director.build();
-
-        System.out.println(director.getEmployee());
-    }
-
     private static void objectPool() {
         ObjectPool pool = new ObjectPool(2);
 
@@ -105,13 +95,6 @@ public class Program {
     }
 
     public static void main(String[] args) {
-        // Builder
-        System.out.println("== Builder ==");
-
-        builder();
-
-        System.out.println("==========\n");
-
         // Object pool
         System.out.println("== Object pool ==");
 
