@@ -20,6 +20,8 @@ import org.designpatterns.structural.decorator.Notification;
 import org.designpatterns.structural.decorator.Notifier;
 import org.designpatterns.structural.decorator.SmsNotifier;
 import org.designpatterns.structural.facade.FacadeForThirdPartyLib;
+import org.designpatterns.structural.flyweight.Bullet;
+import org.designpatterns.structural.flyweight.BulletFactory;
 import org.designpatterns.structural.proxy.ThirdPartyClassProxy;
 import org.designpatterns.structural.proxy.ThirdPartyLib;
 
@@ -41,10 +43,7 @@ public class Program {
 
     private static void builder() {
         EmployeeBuilder buildSettings = new CustomEmployeeBuilder();
-        buildSettings
-                .setId(1)
-                .setFullName("FirstName LastName")
-                .setPosition(Position.Programmer);
+        buildSettings.setId(1).setFullName("FirstName LastName").setPosition(Position.Programmer);
 
         EmployeeDirector director = new EmployeeDirector(buildSettings);
         director.build();
@@ -138,6 +137,21 @@ public class Program {
         }
     }
 
+    private static void flyweight() {
+        BulletFactory factory = new BulletFactory();
+
+        Bullet fisrtBullet = factory.getBullet();
+        fisrtBullet.setX(1);
+        fisrtBullet.setY(1);
+
+        Bullet secondBullet = factory.getBullet();
+        secondBullet.setX(0);
+        secondBullet.setX(0);
+
+        System.out.println(fisrtBullet);
+        System.out.println(secondBullet);
+    }
+
     public static void main(String[] args) {
         // Abstract factory
         System.out.println("== Abstract factory ==");
@@ -207,6 +221,13 @@ public class Program {
         System.out.println("== Proxy ==");
 
         proxy();
+
+        System.out.println("==========\n");
+
+        // Flyweight
+        System.out.println("== Flyweight ==");
+
+        flyweight();
 
         System.out.println("==========\n");
     }
