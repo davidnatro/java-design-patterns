@@ -53,15 +53,6 @@ public class Program {
         }
     }
 
-    private static void prototype() {
-        IPrototype<Prototype> main = new Prototype();
-        System.out.println(main);
-        var copy = main.getPrototype();
-        copy.setId(5);
-        System.out.println(copy);
-        System.out.println(copy.getPrototype());
-    }
-
     private static void bridge() {
         OperationalSystem system = new MacOS();
         BridgeForOS bridge = new BridgeForOS(system);
@@ -127,13 +118,6 @@ public class Program {
         System.out.println("== Object pool ==");
 
         objectPool();
-
-        System.out.println("==========\n");
-
-        // Prototype
-        System.out.println("== Prototype ==");
-
-        prototype();
 
         System.out.println("==========\n");
 

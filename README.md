@@ -58,6 +58,8 @@
 
 * [Lazy initialization tests](src/test/java/org/designpatterns/creational/lazy_initializaiton)
 
+* [Prototype tests](src/test/java/org/designpatterns/creational/prototype)
+
 * [Singleton tests](src/test/java/org/designpatterns/creational/singleton)
 
 </details>

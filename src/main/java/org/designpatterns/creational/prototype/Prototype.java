@@ -3,23 +3,26 @@ package org.designpatterns.creational.prototype;
 public class Prototype implements IPrototype<Prototype> {
     private long id;
 
-    private static int idNumber = 0;
+    private static long idNumber = 0;
 
     public Prototype() {
         id = ++idNumber;
     }
 
-    private Prototype(final long id) {
-        this.id = id;
+    public long getId() {
+        return id;
     }
 
-    public void setId(final long id) {
+    private void setId(final long id) {
         this.id = id;
     }
 
     @Override
     public Prototype getPrototype() {
-        return new Prototype(this.id);
+        Prototype prototype = new Prototype();
+        prototype.setId(id);
+
+        return prototype;
     }
 
     @Override
