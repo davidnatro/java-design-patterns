@@ -1,25 +1,49 @@
 package org.designpatterns.creational.builder;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Employee {
     private int id;
     private String fullName;
     private Position position;
     private String personalData;
 
-    // Employee(int id, String fullName, Position position) { }
+    public Employee() { }
 
-    // Employee(int id, String fullName, Position position, String personalData) { }
+    public Employee(final int id, final String fullName, final Position position, final String personalData) {
+        this.id = id;
+        this.fullName = fullName;
+        this.position = position;
+        this.personalData = personalData;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    public String getPersonalData() {
+        return personalData;
     }
 
     public void setPersonalData(String personalData) {

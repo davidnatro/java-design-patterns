@@ -4,8 +4,6 @@ import org.designpatterns.creational.builder.EmployeeDirector;
 import org.designpatterns.creational.builder.Position;
 import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
-import org.designpatterns.creational.prototype.IPrototype;
-import org.designpatterns.creational.prototype.Prototype;
 import org.designpatterns.structural.bridge.BridgeForOS;
 import org.designpatterns.structural.bridge.MacOS;
 import org.designpatterns.structural.bridge.OperationalSystem;

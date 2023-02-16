@@ -45,6 +45,11 @@ public class CustomEmployeeBuilder implements EmployeeBuilder {
         employee.setPosition(position);
         employee.setPersonalData(Objects.requireNonNullElse(personalData, "No data"));
 
+        id = 0;
+        fullName = null;
+        position = null;
+        personalData = null;
+
         return employee;
     }
 }

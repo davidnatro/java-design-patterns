@@ -49,14 +49,14 @@
 <details>
 <summary>JUnit tests</summary>
 
-##
-
 <details>
 <summary>Creational Design Patterns</summary>
 
 * [Abstract factory tests](src/test/java/org/designpatterns/creational/abstract_factory)
 
 * [Factory method tests](src/test/java/org/designpatterns/creational/factory_method)
+
+* [Builder](src/test/java/org/designpatterns/creational/builder)
 
 * [Lazy initialization tests](src/test/java/org/designpatterns/creational/lazy_initializaiton)
 
