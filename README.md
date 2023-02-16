@@ -56,6 +56,8 @@
 
 * [Factory method tests](src/test/java/org/designpatterns/creational/factory_method)
 
+* [Lazy initialization tests](src/test/java/org/designpatterns/creational/lazy_initializaiton)
+
 * [Singleton tests](src/test/java/org/designpatterns/creational/singleton)
 
 </details>

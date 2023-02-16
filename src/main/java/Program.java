@@ -1,12 +1,7 @@
-import org.designpatterns.creational.abstract_factory.AppleFactory;
-import org.designpatterns.creational.abstract_factory.SamsungFactory;
-import org.designpatterns.creational.abstract_factory.TechFactory;
 import org.designpatterns.creational.builder.CustomEmployeeBuilder;
 import org.designpatterns.creational.builder.EmployeeBuilder;
 import org.designpatterns.creational.builder.EmployeeDirector;
 import org.designpatterns.creational.builder.Position;
-import org.designpatterns.creational.factory_method.Factory;
-import org.designpatterns.creational.lazy_initialization.LazyObject;
 import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
 import org.designpatterns.creational.prototype.IPrototype;
@@ -38,14 +33,6 @@ public class Program {
         director.build();
 
         System.out.println(director.getEmployee());
-    }
-
-    private static void lazyInitialization() {
-        LazyObject lazyObject = new LazyObject();
-        System.out.print("Lazy: ");
-        lazyObject.lazy();
-        System.out.print("Not lazy: ");
-        lazyObject.notLazy();
     }
 
     private static void objectPool() {
@@ -133,13 +120,6 @@ public class Program {
         System.out.println("== Builder ==");
 
         builder();
-
-        System.out.println("==========\n");
-
-        // Lazy initialization
-        System.out.println("== Lazy initialization ==");
-
-        lazyInitialization();
 
         System.out.println("==========\n");
 
