@@ -2,7 +2,7 @@
 
 ## Java
 
-* [Main](src/main/java/org/designpatterns/Main.java)
+* [Main](src/main/java/Program.java)
 
 <details>
 <summary>Creational Design Patterns</summary>
@@ -39,5 +39,7 @@
 * [Decorator](src/main/java/org/designpatterns/structural/decorator)
 
 * [Proxy](src/main/java/org/designpatterns/structural/proxy)
+
+* [Flyweight](src/main/java/org/designpatterns/structural/flyweight)
 
 </details>

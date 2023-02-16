@@ -1,5 +1,3 @@
-package org.designpatterns;
-
 import org.designpatterns.creational.abstract_factory.AppleFactory;
 import org.designpatterns.creational.abstract_factory.SamsungFactory;
 import org.designpatterns.creational.abstract_factory.TechFactory;
@@ -21,9 +19,7 @@ import org.designpatterns.structural.decorator.EmailNotifier;
 import org.designpatterns.structural.decorator.Notification;
 import org.designpatterns.structural.decorator.Notifier;
 import org.designpatterns.structural.decorator.SmsNotifier;
-import org.designpatterns.structural.facade.FacadeWriter;
-import org.designpatterns.structural.facade.Writer;
-import org.designpatterns.structural.proxy.ThirdPartyClass;
+import org.designpatterns.structural.facade.FacadeForThirdPartyLib;
 import org.designpatterns.structural.proxy.ThirdPartyClassProxy;
 import org.designpatterns.structural.proxy.ThirdPartyLib;
 
@@ -31,7 +27,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class Program {
     private static void abstractFactory() {
         TechFactory appleFactory = new AppleFactory();
         TechFactory samsungFactory = new SamsungFactory();
@@ -115,8 +111,9 @@ public class Main {
     }
 
     private static void facade() {
-        Writer writer = new FacadeWriter("path");
-        writer.write();
+        FacadeForThirdPartyLib facade = new FacadeForThirdPartyLib();
+        facade.method2();
+        facade.method3();
     }
 
     private static void decorator() {
@@ -193,7 +190,7 @@ public class Main {
         System.out.println("==========\n");
 
         // Facade
-        System.out.println("== Bridge ==");
+        System.out.println("== Facade ==");
 
         facade();
 
@@ -207,7 +204,7 @@ public class Main {
         System.out.println("==========\n");
 
         // Proxy
-        System.out.println("== Decorator ==");
+        System.out.println("== Proxy ==");
 
         proxy();
 
