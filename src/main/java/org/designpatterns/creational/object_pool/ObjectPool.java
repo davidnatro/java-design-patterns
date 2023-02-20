@@ -10,8 +10,6 @@ public class ObjectPool {
     private final Queue<PooledObject> objects;
     private final List<PooledObject> inUseObjects;
 
-    private LinkedBlockingQueue<PooledObject> objects2;
-
     public ObjectPool(final int poolSize) throws IllegalArgumentException {
         if (poolSize <= 0) {
             throw new IllegalArgumentException("Invalid pool size!");

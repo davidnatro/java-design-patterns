@@ -17,7 +17,6 @@ public class Client implements Runnable {
         System.out.println(this + " gets " + object);
 
         return object;
-
     }
 
     private void returnObjectToPool(final PooledObject object) {
