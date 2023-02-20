@@ -36,16 +36,6 @@ public class Program {
         }
     }
 
-    private static void bridge() {
-        OperationalSystem system = new MacOS();
-        BridgeForOS bridge = new BridgeForOS(system);
-        bridge.run();
-
-        system = new Windows();
-        bridge = new BridgeForOS(system);
-        bridge.run();
-    }
-
     private static void facade() {
         FacadeForThirdPartyLib facade = new FacadeForThirdPartyLib();
         facade.method2();
@@ -94,13 +84,6 @@ public class Program {
         System.out.println("== Object pool ==");
 
         objectPool();
-
-        System.out.println("==========\n");
-
-        // Bridge
-        System.out.println("== Bridge ==");
-
-        bridge();
 
         System.out.println("==========\n");
 

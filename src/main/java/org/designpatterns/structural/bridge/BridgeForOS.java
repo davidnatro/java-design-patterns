@@ -1,13 +1,14 @@
 package org.designpatterns.structural.bridge;
 
-public class BridgeForOS {
+public class BridgeForOS implements OperationalSystem {
     private final OperationalSystem operationalSystem;
 
     public BridgeForOS(final OperationalSystem operationalSystem) {
         this.operationalSystem = operationalSystem;
     }
 
-    public void run() {
-        operationalSystem.run();
+    @Override
+    public OS run() {
+        return operationalSystem.run();
     }
 }
