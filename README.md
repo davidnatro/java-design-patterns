@@ -68,6 +68,9 @@
 
 <details>
 <summary>Structural Design Patterns</summary>
+
+* [Bridge tests](src/test/java/org/designpatterns/structural/bridge)
+
 </details>
 
 <details>
