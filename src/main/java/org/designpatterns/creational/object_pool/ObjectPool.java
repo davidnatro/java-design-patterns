@@ -4,10 +4,13 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class ObjectPool {
     private final Queue<PooledObject> objects;
     private final List<PooledObject> inUseObjects;
+
+    private LinkedBlockingQueue<PooledObject> objects2;
 
     public ObjectPool(final int poolSize) throws IllegalArgumentException {
         if (poolSize <= 0) {
@@ -23,11 +26,16 @@ public class ObjectPool {
     }
 
     public synchronized PooledObject getObject() {
-        PooledObject object = objects.poll();
-
-        if (object != null) {
-            inUseObjects.add(object);
+        PooledObject object;
+        while ((object = objects.poll()) == null) {
+            try {
+                wait();
+            } catch (final InterruptedException exception) {
+                System.out.println(exception.getMessage());
+            }
         }
+
+        inUseObjects.add(object);
 
         return object;
     }
@@ -39,5 +47,7 @@ public class ObjectPool {
 
         inUseObjects.remove(object);
         objects.add(object);
+
+        notifyAll();
     }
 }

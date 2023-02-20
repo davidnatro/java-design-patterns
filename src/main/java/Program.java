@@ -33,7 +33,6 @@ public class Program {
             }
         } catch (InterruptedException exception) {
             System.out.println(exception.getMessage());
-            return;
         }
     }
 

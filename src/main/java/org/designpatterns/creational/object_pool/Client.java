@@ -13,29 +13,16 @@ public class Client implements Runnable {
     }
 
     private PooledObject getObjectFromPool() {
-        synchronized (pool) {
-            PooledObject object;
+        PooledObject object = pool.getObject();
+        System.out.println(this + " gets " + object);
 
-            while ((object = pool.getObject()) == null) {
-                try {
-                    pool.wait();
-                } catch (final InterruptedException exception) {
-                    System.out.println(exception.getMessage());
-                }
-            }
+        return object;
 
-            System.out.println(this + " gets " + object);
-
-            return object;
-        }
     }
 
     private void returnObjectToPool(final PooledObject object) {
-        synchronized (pool) {
-            pool.returnObject(object);
-            System.out.println(this + " returns " + object);
-            pool.notifyAll();
-        }
+        pool.returnObject(object);
+        System.out.println(this + " returns " + object);
     }
 
     @Override
