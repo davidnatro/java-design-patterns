@@ -1,7 +1,3 @@
-import org.designpatterns.creational.builder.CustomEmployeeBuilder;
-import org.designpatterns.creational.builder.EmployeeBuilder;
-import org.designpatterns.creational.builder.EmployeeDirector;
-import org.designpatterns.creational.builder.Position;
 import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
 import org.designpatterns.structural.bridge.BridgeForOS;
