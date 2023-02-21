@@ -1,5 +1,8 @@
 package org.designpatterns.structural.proxy;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Data {
     private static long idCount = 0;
 

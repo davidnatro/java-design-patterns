@@ -1,9 +1,5 @@
 import org.designpatterns.creational.object_pool.Client;
 import org.designpatterns.creational.object_pool.ObjectPool;
-import org.designpatterns.structural.bridge.BridgeForOS;
-import org.designpatterns.structural.bridge.MacOS;
-import org.designpatterns.structural.bridge.OperationalSystem;
-import org.designpatterns.structural.bridge.Windows;
 import org.designpatterns.structural.decorator.EmailNotifier;
 import org.designpatterns.structural.decorator.Notification;
 import org.designpatterns.structural.decorator.Notifier;
@@ -20,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Program {
     private static void objectPool() {
+        System.out.println("'Print statements are not synchronized'");
+
         ObjectPool pool = new ObjectPool(2);
 
         ExecutorService es = Executors.newCachedThreadPool();
